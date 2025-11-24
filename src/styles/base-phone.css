@@ -1,0 +1,131 @@
+@media only screen and (max-width: 1000px) {
+  ::-webkit-scrollbar {
+    width: 7.5px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #4e4e4e;
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #888888;
+    border-radius: 10px;
+    border: 0px solid #ccc;
+  }
+
+  body, html {
+    overflow: hidden; /* ok */
+    overflow-y: auto;
+    position: relative;
+  }
+
+  body * {
+    overflow: hidden;
+  }
+
+  .header {
+    flex-direction: row;
+    width: 95%;
+    padding: 10px;
+    justify-content: space-between;
+  }
+  html:not([data-scroll='0']) .header{
+    backdrop-filter: blur(12px);
+    border-width: 1px;
+    padding: 2px 15px;
+    border-radius: 100px;
+    border-color: rgba(255,255,255,0.3);
+    border-style: solid;
+    width:95%;
+    padding: 10px 0;
+}
+html:not([data-scroll='0']) .header.active{
+    backdrop-filter: blur(12px);
+    border-width: 1px;
+    padding: 2px 15px;
+    border-radius: 8px;
+    border-color: rgba(255,255,255,0.3);
+    border-style: solid;
+    width:95%;
+    padding: 10px 0;
+}
+  .header.active {
+    height: 100%; /* allow the whole menu to expand downwards */
+    align-items: flex-start; /* optional: aligns content at top */
+    flex-direction: column;  /* stack logo and menu vertically */
+    justify-content: flex-start;
+    border-radius: 0px;
+  }
+  .header.active .header-menubtn-mobile{
+    position: relative;
+    top: -3.9vh;
+    align-self: flex-end;
+    z-index: 9999;
+  }
+
+  .header-logo {
+    width: 150px;
+  }
+
+  .header-menu {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 20px 0;
+    background: rgba(0, 0, 0, 0.8);
+    display: none; /* hidden by default, toggle with JS */
+    z-index: 9998;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .header-menu.active {
+    display: flex;
+    z-index: 9998;
+  }
+
+  .header-menubtn-mobile {
+    display: block;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1000;
+    transform: translateX(-25%);
+    width: max-content;
+  }
+
+  .header-menu a {
+    flex-direction: row;
+    font-size: 16px;
+    padding: 10px 0;
+  }
+
+  .header-menu-buttons {
+    width: 90%;
+    text-align: center;
+  }
+
+  .footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-section1 a img {
+    height: 36px;
+  }
+
+  .content {
+    padding: 0 10px;
+  }
+
+  .header-menu a::after {
+    display: none;
+  }
+}

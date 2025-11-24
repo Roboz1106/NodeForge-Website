@@ -1,0 +1,153 @@
+@media only screen and (max-width: 1000px) {
+    .head-banner-title1{
+    color: white;
+    font-family: "Minecraft";
+    font-size: 250%;
+    z-index: 2;
+    /*animation: pushUp 1s ease-in-out forwards;*/
+    filter:drop-shadow(0 2px 10px hsla(0, 0%, 100%, .5));
+}
+.head-banner-title2{
+    color: transparent;
+    background: linear-gradient(90deg, #3b82f6, #9333ea, #3b82f6);
+    font-family: "Minecraft";
+    font-size: 250%;
+    text-align: center;
+    z-index: 2;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /*animation: pushUp 1s ease-in-out forwards;*/
+    filter: drop-shadow(0 2px 15px rgba(96, 165, 250, 0.5));
+}
+.head-banner-subtitle1{
+    z-index: 2;
+    font-size: 100%;
+    font-family: "Arial", sans-serif;
+    color:#ffffffd9;
+    text-align: center;
+    /*animation: pushUp 1s ease-in-out forwards;*/
+}
+.head-banner-buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    z-index: 2;
+    /*animation: pushUp 1s ease-in-out forwards;*/
+    flex-direction: column;
+    padding:10px;
+    width: 100%;
+}
+.head-banner-button1{
+    color: white;
+    width: 70%;
+    text-align: center;
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    padding: 12px 32px;
+    font-size: 80%;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease-in-out;
+}
+.head-banner-button2{
+    color: white;
+    width: 70%;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.0);
+    backdrop-filter: blur(12px);
+    padding: 12px 32px;
+    font-size: 80%;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease-in-out;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+}
+.head-banner-features{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2%;
+    z-index: 2;
+    width: 85%;
+    /*animation: pushUp 1s ease-in-out forwards;*/
+}
+.head-banner-features-item{
+    color: rgba(255, 255, 255, 0.738);
+    background-color: hsla(0, 0%, 100%, .1);
+    backdrop-filter: blur(4px);
+    padding: 6px 25px;
+    font-size: 80%;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease-in-out;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(255,255,255,0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 2%;
+}
+.head-banner-features-item i{
+    color:#60A5FA;
+    font-size: 80%;
+}
+.banner2-title1{
+    font-size: 190%;
+    /*animation: pushUp 1s ease-in-out forwards;*/
+}
+.banner2-subtitle1{
+    font-size: 100%;
+    color:#bfbfbf;
+    /*animation: pushUp 1s ease-in-out forwards;*/
+}
+.banner2-menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 70px;
+    z-index: 2;
+    /*animation: pushUp 1s ease-in-out forwards;*/
+    flex-direction: column;
+    width: 100%;
+    flex-wrap: wrap;
+    padding:15px;
+    padding-top: 75px;
+}
+.banner2-menu-item{
+    padding: 25px;
+    height:auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-color: rgba(255,255,255,0.2);
+    border-radius: 8px;
+    border-width: 1px;
+    border-style: solid;
+    background-color: rgba(0, 0, 25, 0.1);
+    background-image: linear-gradient(0deg, rgba(0, 0, 25, 0.1) 0%,rgba(0, 0, 25, 0.1) 80%, rgba(35, 137, 254,0.25) 100%);
+    width:80%;
+    gap:10px;
+    transition: all 0.3s ease-in-out;
+}
+.banner2-menu-item > .card-icon {
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-275%);
+  border-radius: 8px;
+  width: 64px;
+  height: auto;
+  pointer-events: none; /* won’t block clicks */
+}
+}

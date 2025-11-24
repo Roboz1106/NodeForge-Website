@@ -1,0 +1,209 @@
+::-webkit-scrollbar {
+    width: 7.5px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #4e4e4e; /* light gray */
+    border-radius: 10px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #888888; /* white */
+    border-radius: 10px;
+    border: 0px solid #ccc; /* padding effect */
+  }
+  body, html {
+    overflow-x: hidden; /* ok */
+    overflow-y: auto;   /* or scroll, also ok */
+    position: relative;
+  }
+  body *{
+    overflow: hidden;
+    user-select: none;
+  }
+@font-face {
+    font-family: 'Minecraft';
+    src: url('/minecraft.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Super Bakery';
+    src: url('/SuperBakery.ttf') format('truetype');
+}
+@keyframes pushUp {
+    0% {
+      transform: translateY(250%);
+      opacity: 0.5;
+    }
+    100% {
+      transform: translateY(1);
+      opacity: 1;
+    }
+  }
+.animate-up {
+      opacity: 0;
+      transform: translateY(30px) scale(0.9) rotateX(20deg);
+      transition: all 0.75s ease-out;
+    }
+
+.animate-up.visible {
+      opacity: 1;
+      transform: translateY(0) scale(1) rotateX(0deg);
+      transition-delay: var(--delay, 0ms);
+    }
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: rgb(11,11,20);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+}
+@keyframes startWeb {
+  0% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.content{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    animation: startWeb 2s ease-in-out forwards;
+}
+html:not([data-scroll='0']) .header{
+    backdrop-filter: blur(12px);
+    border-width: 1px;
+    padding: 2px 15px;
+    border-radius: 100px;
+    border-color: rgba(255,255,255,0.3);
+    border-style: solid;
+    width:95%;
+    padding: 10px 0;
+}
+.header{
+    background-color: transparent;
+    text-align: center;
+    position: fixed;
+    width:97%;
+    padding: 2px 15px;
+    backdrop-filter: blur(0px);
+    transition: ease-in-out 0.25s;
+    border-radius: 100px;
+    border-color: rgba(255,255,255,0.3);
+    border-style: solid;
+    border-width: 0px;
+    top: 15px;
+    z-index: 9999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+.header-logo{
+    width: 200px;
+    height: auto;
+    margin: 0 0;
+    display: block;
+}
+.header-logo img{
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+.vr{
+    background-color: rgba(255,255,255,0.3);
+    width: 100%;
+    height: 1px;
+}
+.footer{
+    display: flex;
+    flex-direction: row;
+    width:100%;
+    color:#9CA3Af;
+}
+.header-menu a{
+    text-decoration: none;
+    color: #dbdbdb;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    flex-direction: row;
+}
+.header-menu a:hover{
+    color: #fff;
+    transform: scale(1.075);
+}
+.header-menu a button{
+  border-radius: 100px;
+}
+.header-menu{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 50%;
+    padding: 0 15px;
+}
+.header-menubtn-mobile{
+    display:none;
+}
+.header-menu-buttons{
+    background-color: #2c63f9;
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+.header-menu-buttons:hover{
+    background-color: #1a4bb8;
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+}
+.header-menu a {
+    display: flex;
+    align-items: center;
+    gap: 0px; /* space between icon and text */
+    text-decoration: none;
+    color: #dbdbdb;
+    transition: all 0.3s ease-in-out;
+    position: relative; /* This now won't mess up your layout */
+    flex-direction: column;
+  }
+.header-menu a::after {
+    content: "";
+    position: relative;
+    left: 50%;
+    bottom: 0%;
+    transform: translateX(-50%) scaleX(0);
+    transform-origin: center;
+    width: 100%;
+    z-index: 99999;
+    height: 1px;
+    top: 0%;
+    background-color: white;
+    transition: transform 0.3s ease-in-out;
+  }
+.header-menu a:hover::after {
+    transform: translateX(-50%) scaleX(1);
+  }
+.footer-section1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    padding: 20px 0;
+}
+.footer-section1 a img{
+    height: 48px;
+}

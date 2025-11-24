@@ -1,0 +1,310 @@
+.head-banner{
+    background-image: url(/minecraft-hero2.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width:100%;
+    /*height:99.882vh;*/
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.head-banner::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.75); /* darken */
+    z-index: 0;
+  }
+.head-banner-quote-1{
+    font-size: 15px;
+    color: rgb(147, 197, 253);
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 10px;
+    z-index: 2;
+    border-radius: 99999px;
+    border-color: rgba(96, 165, 250, .2);
+    border-width: 1px;
+    border-style: solid;
+    padding: 10px 20px;
+    background-color: rgba(59, 130, 246, .1);
+    backdrop-filter: blur(12px);
+    box-shadow: 0px 2px 0px rgba(96, 165, 250, .4);
+    /*animation: pushUp 1s ease-in-out forwards;*/
+    filter:drop-shadow(0 2px 10px rgb(255, 255, 255));
+}
+.head-banner-title1{
+    color: white;
+    font-family: "Minecraft";
+    font-size: 75px;
+    z-index: 2;
+    /*animation: pushUp 1s ease-in-out forwards;*/
+    filter:drop-shadow(0 2px 10px hsla(0, 0%, 100%, .5));
+}
+.head-banner-title2{
+    color: transparent;
+    background: linear-gradient(90deg, #3b82f6, #9333ea, #3b82f6);
+    font-family: "Minecraft";
+    font-size: 75px;
+    z-index: 2;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /*animation: pushUp 1s ease-in-out forwards;*/
+    filter: drop-shadow(0 2px 15px rgba(96, 165, 250, 0.5));
+}
+.head-banner-subtitle1{
+    z-index: 2;
+    font-size: 23px;
+    font-family: "Arial", sans-serif;
+    color:#ffffffd9;
+    text-align: center;
+    /*animation: pushUp 1s ease-in-out forwards;*/
+}
+.head-banner-buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    z-index: 2;
+    /*animation: pushUp 1s ease-in-out forwards;*/
+    flex-direction: row;
+    padding:10px;
+}
+.head-banner-button1{
+    color: white;
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    padding: 12px 32px;
+    font-size: 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease-in-out;
+}
+.head-banner-button1:hover{
+    transform: scale(1.05);
+}
+.head-banner-button2{
+    color: white;
+    background-color: hsla(0, 0%, 100%, .1);
+    backdrop-filter: blur(4px);
+    padding: 12px 32px;
+    font-size: 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease-in-out;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+}
+.head-banner-button2:hover{
+    transform: scale(1.05);
+}
+.head-banner-features{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    z-index: 2;
+    /*animation: pushUp 1s ease-in-out forwards;*/
+    flex-direction: row;
+}
+.head-banner-features-item{
+    color: rgba(255, 255, 255, 0.738);
+    background-color: hsla(0, 0%, 100%, .1);
+    backdrop-filter: blur(4px);
+    padding: 6px 25px;
+    font-size: 15px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease-in-out;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(255,255,255,0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap:10px;
+}
+.head-banner-features-item i{
+    color:#2563eb;
+    font-size: 18px;
+}
+.banner2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.banner2-quote1{
+    font-size: 15px;
+    color: rgb(254, 202, 105);
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 10px;
+    z-index: 2;
+    border-radius: 99999px;
+    border-color: rgba(250, 175, 96, 0.2);
+    border-width: 1px;
+    border-style: solid;
+    padding: 10px 20px;
+    background-color: rgba(246, 160, 48, 0.1);
+    backdrop-filter: blur(12px);
+    box-shadow: 0px 2px 0px rgba(250, 188, 96, 0.4);
+    /*animation: pushUp 1s ease-in-out forwards;*/
+    filter:drop-shadow(0 2px 10px rgb(255, 255, 255));
+}
+.banner2-title1{
+    font-size: 50px;
+    /*animation: pushUp 1s ease-in-out forwards;*/
+}
+.banner2-subtitle1{
+    font-size: 20px;
+    color:#bfbfbf;
+    /*animation: pushUp 1s ease-in-out forwards;*/
+}
+.banner2-menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    z-index: 2;
+    /*animation: pushUp 1s ease-in-out forwards;*/
+    flex-direction: row;
+    width: 100%;
+    flex-wrap: wrap;
+    padding:15px;
+}
+.banner2-menu-item{
+    flex: 0 0 calc(25% - 10px);
+    padding: 25px;
+    padding-bottom: 0px;
+    height:auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-color: rgba(255,255,255,0.2);
+    border-radius: 8px;
+    border-width: 2px;
+    border-style: solid;
+    background-color: rgba(0, 0, 25, 0.1);
+    background-image: linear-gradient(0deg, rgba(0, 0, 25, 0.1) 0%,rgba(0, 0, 25, 0.1) 80%, rgba(35, 137, 254,0.25) 100%);
+    width:75%;
+    height: 370px;
+    gap:10px;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    overflow: visible;
+    cursor: pointer;
+}
+.banner2-menu-item:hover{
+    border-color:#2563eb;
+}
+.b2miun{
+    cursor: not-allowed;
+}
+.banner2-menu-item > .card-icon {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-275%);
+  border-radius: 8px;
+  width: 64px;
+  height: auto;
+  pointer-events: none; /* won’t block clicks */
+}
+.banner2-menu-item > .b2mih{
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   align-items: center;
+   text-align: center;
+   width: 100%;
+}
+.banner2-menu-item > .b2mih > span{
+    font-size: 1.875rem;
+    font-weight: 800;
+    font-family: Arial, sans-serif;
+}
+.banner2-menu-item > .b2mih > p{
+    font-size: 10px;
+    color: rgb(78, 251, 78);
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 10px;
+    z-index: 2;
+    border-radius: 99999px;
+    border-color: rgba(78, 251, 78, 0.2);
+    border-width: 1px;
+    border-style: solid;
+    padding: 5px 12.5px;
+    background-color: rgba(78, 251, 78, 0.1);
+    backdrop-filter: blur(12px);
+    box-shadow: 0px 2px 0px rgba(78, 251, 78, 0.4);
+    /*animation: pushUp 1s ease-in-out forwards;*/
+    filter:drop-shadow(0 2px 10px rgb(255, 255, 255));
+}
+.banner2-menu-item > .b2mif{
+    display: flex;
+    flex-direction: column;
+    width:100%;
+    gap: 10px;
+}
+.banner2-menu-item > .b2mif > span{
+    display: flex;
+    flex-direction: row;
+    font-size: 18px;
+    color: #ffffff;
+    font-weight: 500;
+    gap:10px;
+}
+.banner2-menu-item > .b2mif > span img{
+    width: 20px;
+    filter:invert(36%) sepia(98%) saturate(2477%) hue-rotate(214deg) brightness(92%) contrast(96%);
+}
+.banner2-menu-item > .b2mis{
+    font-size: 15px;
+    color: white;
+    text-align: left;
+    width: 100%;
+}
+.banner2-menu-item > .b2mis2{
+    font-size: 20px;
+    color: white;
+    text-align: left;
+    width: 100%;
+}
+.banner2-menu-item > .b2mip{
+    font-size: 20px;
+    color:#2563eb;
+    text-align: left;
+    width: 100%;
+    margin-top: 10px;
+    font-weight: 700;
+    margin:0;
+}
+.banner2-menu-item > .b2mia{
+    color: white;
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    padding: 12px 32px;
+    font-size: 22px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease-in-out;
+    width:85%;
+}
+.banner2-menu-item > .b2mia:hover{
+    transform: scale(1.05);
+}
