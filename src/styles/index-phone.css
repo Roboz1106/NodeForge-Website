@@ -1,8 +1,7 @@
 @media only screen and (max-width: 1000px) {
     .head-banner-title1{
     color: white;
-    font-family: "Minecraft";
-    font-size: 250%;
+    font-size: 200%;
     z-index: 2;
     /*animation: pushUp 1s ease-in-out forwards;*/
     filter:drop-shadow(0 2px 10px hsla(0, 0%, 100%, .5));
@@ -10,7 +9,6 @@
 .head-banner-title2{
     color: transparent;
     background: linear-gradient(90deg, #3b82f6, #9333ea, #3b82f6);
-    font-family: "Minecraft";
     font-size: 250%;
     text-align: center;
     z-index: 2;
