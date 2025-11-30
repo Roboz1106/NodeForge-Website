@@ -1,0 +1,59 @@
+---
+import Layout from '../layouts/Layout.astro';
+import "../styles/minecraft.css";
+import "../styles/minecraft-phone.css";
+---
+<Layout>
+    <div class="head-banner">
+        <div class="head-banner-segment1">
+            <span class="hbs1q">Premium</span>
+            <span class="hbs1t animate-up">MINECRAFT SERVER<font style="color:white;-webkit-text-fill-color: white;">HOSTING</font></span>
+            <span class="hbs1s animate-up">Launch your own premium Minecraft world with NodeForge! Get fast, stable servers, easy setup, and full control over plugins, mods, and settings. Whether you’re playing casually with friends or building a large community, our budget‑friendly plans deliver low latency and dependable uptime. Spin up your server and start exploring today.</span>
+            <div class="hbs1f animate-up">
+                <div class="hbs1f-item">
+                    <i class="fi fi-rr-check-circle"></i>
+			        <span>Java & Bedrock</span>
+                </div>
+                <div class="hbs1f-item">
+                    <i class="fi fi-rr-bolt"></i>
+			        <span>Quick Setup</span>
+                </div>
+                <div class="hbs1f-item">
+                    <i class="fi fi-rr-screen"></i>
+			        <span>Best Control Panel</span>
+                </div>
+                <div class="hbs1f-item">
+                    <i class="fi fi-rr-cloud-upload"></i>
+			        <span>98% Server Uptime</span>
+                </div>
+                <div class="hbs1f-item">
+                    <i class="fi fi-rr-money"></i>
+			        <span>Zero Hidden Fees</span>
+                </div>
+            </div>
+            <a href="#" class="hbs1-button animate-up">Create Server now</a>
+        </div>
+        <div class="head-banner-segment2 animate-up">
+            <img src="/minecraft-s2.png" class="hbs2img">
+            <script>
+                const img = document.querySelector('.hbs2img');
+                window.addEventListener('mousemove', (e) => {
+                    const x = e.clientX / window.innerWidth - 0.5;
+                    const y = e.clientY / window.innerHeight - 0.5;
+                    const strength = 15;
+                    const moveX = x * strength;
+                    const moveY = y * strength;
+                    const rotX = x * 1;
+                    const scY = ((-y+0.5)*0.02)+1;
+                    img.style.transform = `translate(${moveX}px, ${moveY}px) rotate(${rotX}deg) scale(${scY})`;
+                });
+            </script>
+        </div>
+    </div>
+    <div class="vr"></div>
+    <div class="banner2">
+        <span class="b2-title">Want a <font>Custom</font> order?</span>
+        <span class="b2-sub">Join our <font>Discord</font> and create a ticket to get a custom order. We will reply ASAP.</span>
+        <a class="b2-btn" href="https://discord.gg/cKAX93RnKK">Join Discord!<img src="/discord-black.png"></a>
+    </div>
+</Layout>

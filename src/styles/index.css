@@ -41,7 +41,7 @@
 }
 .head-banner-title1{
     color: white;
-    font-family: "Minecraft";
+    font-family: "Lake Font";
     font-size: 75px;
     z-index: 2;
     /*animation: pushUp 1s ease-in-out forwards;*/
@@ -50,7 +50,7 @@
 .head-banner-title2{
     color: transparent;
     background: linear-gradient(90deg, #3b82f6, #9333ea, #3b82f6);
-    font-family: "Minecraft";
+    font-family: "Lake Font";
     font-size: 75px;
     z-index: 2;
     background-clip: text;
@@ -85,6 +85,7 @@
     border-radius: 6px;
     text-decoration: none;
     font-weight: 500;
+    font-family: 'Orbitron';
     transition: all 0.3s ease-in-out;
 }
 .head-banner-button1:hover{
@@ -92,10 +93,11 @@
 }
 .head-banner-button2{
     color: white;
-    background-color: hsla(0, 0%, 100%, .1);
+    background-color: hsla(209, 100%, 50%, 0.15);
     backdrop-filter: blur(4px);
     padding: 12px 32px;
     font-size: 18px;
+    font-family: 'Orbitron';
     border-radius: 6px;
     text-decoration: none;
     font-weight: 500;
@@ -119,7 +121,7 @@
 }
 .head-banner-features-item{
     color: rgba(255, 255, 255, 0.738);
-    background-color: hsla(0, 0%, 100%, .1);
+    background-color: hsla(209, 100%, 50%, 0.15);
     backdrop-filter: blur(4px);
     padding: 6px 25px;
     font-size: 15px;
@@ -166,6 +168,7 @@
 }
 .banner2-title1{
     font-size: 50px;
+    font-family: 'Orbitron';
     /*animation: pushUp 1s ease-in-out forwards;*/
 }
 .banner2-subtitle1{
@@ -181,9 +184,10 @@
     z-index: 2;
     /*animation: pushUp 1s ease-in-out forwards;*/
     flex-direction: row;
-    width: 100%;
     flex-wrap: wrap;
     padding:15px;
+    /*padding-left: calc(15px-7.5px);*/
+    padding-right: calc(15px + 7.5px + 15px);
 }
 .banner2-menu-item{
     flex: 0 0 calc(25% - 10px);
@@ -194,14 +198,14 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-color: rgba(255,255,255,0.2);
+    border-color: rgb(47, 73, 107);
     border-radius: 8px;
     border-width: 2px;
     border-style: solid;
-    background-color: rgba(0, 0, 25, 0.1);
-    background-image: linear-gradient(0deg, rgba(0, 0, 25, 0.1) 0%,rgba(0, 0, 25, 0.1) 80%, rgba(35, 137, 254,0.25) 100%);
+    background-color: rgba(37, 99, 235, 0.08);
+    background-image: url(/background.webp);
     width:75%;
-    height: 370px;
+    height: 300px;
     gap:10px;
     transition: all 0.3s ease-in-out;
     position: relative;
@@ -211,6 +215,19 @@
 .banner2-menu-item:hover{
     border-color:#2563eb;
 }
+.banner2-menu-item *{
+    z-index: 2;
+}
+.banner2-menu-item::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(0deg, rgba(0, 0, 25, 0.1) 0%,rgba(0, 0, 25, 0.1) 80%, rgba(35, 137, 254,0.2) 100%);
+    z-index: 1;
+    border-radius: 8px;
+  }
 .b2miun{
     cursor: not-allowed;
 }
@@ -223,6 +240,7 @@
   width: 64px;
   height: auto;
   pointer-events: none; /* won’t block clicks */
+  z-index: 5;
 }
 .banner2-menu-item > .b2mih{
    display: flex;
@@ -233,9 +251,9 @@
    width: 100%;
 }
 .banner2-menu-item > .b2mih > span{
-    font-size: 1.875rem;
-    font-weight: 800;
-    font-family: Arial, sans-serif;
+    font-size: 30px;
+    font-weight: 200;
+    font-family: 'Lake Font';
 }
 .banner2-menu-item > .b2mih > p{
     font-size: 10px;
@@ -279,21 +297,6 @@
     text-align: left;
     width: 100%;
 }
-.banner2-menu-item > .b2mis2{
-    font-size: 20px;
-    color: white;
-    text-align: left;
-    width: 100%;
-}
-.banner2-menu-item > .b2mip{
-    font-size: 20px;
-    color:#2563eb;
-    text-align: left;
-    width: 100%;
-    margin-top: 10px;
-    font-weight: 700;
-    margin:0;
-}
 .banner2-menu-item > .b2mia{
     color: white;
     background: linear-gradient(135deg, #3b82f6, #2563eb);
@@ -301,6 +304,7 @@
     font-size: 22px;
     border-radius: 6px;
     text-decoration: none;
+    font-family: 'Orbitron';
     font-weight: 500;
     transition: all 0.3s ease-in-out;
     width:85%;

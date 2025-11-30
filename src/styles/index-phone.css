@@ -55,8 +55,6 @@
     color: white;
     width: 70%;
     text-align: center;
-    background-color: rgba(255, 255, 255, 0.0);
-    backdrop-filter: blur(12px);
     padding: 12px 32px;
     font-size: 80%;
     border-radius: 6px;
@@ -80,8 +78,6 @@
 }
 .head-banner-features-item{
     color: rgba(255, 255, 255, 0.738);
-    background-color: hsla(0, 0%, 100%, .1);
-    backdrop-filter: blur(4px);
     padding: 6px 25px;
     font-size: 80%;
     border-radius: 6px;
@@ -98,7 +94,7 @@
     margin-bottom: 2%;
 }
 .head-banner-features-item i{
-    color:#60A5FA;
+    color:#2563eb;
     font-size: 80%;
 }
 .banner2-title1{
@@ -130,12 +126,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-color: rgba(255,255,255,0.2);
     border-radius: 8px;
     border-width: 1px;
     border-style: solid;
-    background-color: rgba(0, 0, 25, 0.1);
-    background-image: linear-gradient(0deg, rgba(0, 0, 25, 0.1) 0%,rgba(0, 0, 25, 0.1) 80%, rgba(35, 137, 254,0.25) 100%);
     width:80%;
     gap:10px;
     transition: all 0.3s ease-in-out;

@@ -128,4 +128,10 @@ html:not([data-scroll='0']) .header.active{
   .header-menu a::after {
     display: none;
   }
+  .help-circle{
+    top:90%;
+    left:80%;
+    width: 60px;
+    height: 60px;
+  }
 }
