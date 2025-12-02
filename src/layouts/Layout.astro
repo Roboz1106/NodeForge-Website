@@ -13,6 +13,33 @@ import "../styles/base-phone.css"
 		<link rel="stylesheet" href="/uicons-regular-rounded.css">
 	</head>
 	<body>
+		<audio id="bg-music" src="/background-music.mp3" autoplay loop></audio>
+		<script>
+			const bgMusic = document.getElementById("bg-music");
+			window.addEventListener("DOMContentLoaded", () => {
+				bgMusic.currentTime = window.localStorage.getItem("bg-music-time") || 0;
+				if (localStorage.getItem("bg-music-muted") === "true") {
+					bgMusic.volume = 0.0;
+					document.querySelector("#bg-music-toggle span i").className = "fi fi-rr-volume-mute";
+				}
+				else {
+					document.querySelector("#bg-music-toggle span i").className = "fi fi-rr-volume";
+					bgMusic.volume = 0.02;
+				}
+			});
+			window.addEventListener("pagehide", () => {
+				window.localStorage.setItem("bg-music-time", bgMusic.currentTime);
+			});
+			document.querySelector("#bg-music-toggle")?.addEventListener("click", () => {
+				if (localStorage.getItem("bg-music-muted") === "true") {
+					localStorage.setItem("bg-music-muted", "false");
+				}
+				else if (localStorage.getItem("bg-music-muted") === "false" || localStorage.getItem("bg-music-muted") === null) {
+					localStorage.setItem("bg-music-muted", "true");
+				}
+				location.reload();
+			});
+		</script>
 		<script>
 			function storeScroll() {
 				document.documentElement.dataset.scroll = window.scrollY+'';
@@ -26,9 +53,6 @@ import "../styles/base-phone.css"
 			subpath = subpath.split('?')[0];
 			if (subpath == "minecraft"){
 				document.getElementById("mc-hma")?.classList.add("hmah");
-			}
-			else if (subpath == "beammp"){
-				document.getElementById("bmp-hma")?.classList.add("hmah");
 			}
 			else if (subpath == "discordbot"){
 				document.getElementById("dc-hma")?.classList.add("hmah");
@@ -49,6 +73,7 @@ import "../styles/base-phone.css"
 				<a id="dc-hma" href="/discordbot"><span><i class="fi fi-rr-screen"></i> Discord Bot</span></a>
 				<a href="https://billing.nodeforge.in"><button class="header-menu-buttons">Billing</button></a>
 				<a href="https://control.nodeforge.in"><button class="header-menu-buttons">Control</button></a>
+				<a id="bg-music-toggle"><span><i class=""></i></span></a>
 			</div>
 		</div>
 		<div class="content">
@@ -103,7 +128,7 @@ import "../styles/base-phone.css"
         const delay = parseFloat(entry.target.style.getPropertyValue('--delay')) || 0;
         setTimeout(() => {
           entry.target.style.removeProperty('--delay');
-        }, delay + 500); // delay + animation duration
+        }, delay + 250); // delay + animation duration
       } else {
         entry.target.classList.remove('visible');
       }
@@ -120,7 +145,7 @@ import "../styles/base-phone.css"
   });
 
   elements.forEach((el, index) => {
-    const delay = index * 100;
+    const delay = index * 100; // 100ms delay between each element
     el.style.setProperty('--delay', `${delay}ms`);
     observer.observe(el);
 

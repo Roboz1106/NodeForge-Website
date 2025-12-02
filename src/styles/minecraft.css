@@ -138,6 +138,7 @@
     font-weight: 500;
     font-family: 'Orbitron';
     transition: all 0.3s ease-in-out;
+    cursor: pointer;
 }
 .hbs1-button:hover{
     transform: scale(1.05);
@@ -215,4 +216,177 @@
     top:4px;
     position: relative;
     margin-left: 10px;
+}
+.mcservsel{
+    background-color: rgba(11,11,20, 0.97);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scaleY(0);
+    z-index: 1000;
+    display: flex;
+    height: 75%;
+    width: 50%;
+    border-radius: 10px;
+    transition: 0.3s ease-in-out;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.mcservsel.active{
+    display: flex;
+    transform: translate(-50%, -50%) scaleY(1);
+}
+.mcservsel > :first-child{
+    flex: 0 0 84.9%;
+}
+.mcservsel > :nth-child(2){
+    flex: 0 0 0.1%;
+}
+.mcservsel > :last-child{
+    flex: 0 0 15%;
+}
+.mcservsel .nav-btns{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60%;
+    width: 100%;
+}
+.mcservsel .nav-btns > :first-child{
+    color: white;
+    background-color: hsla(209, 100%, 50%, 0.15);
+    backdrop-filter: blur(4px);
+    padding: 12px 32px;
+    font-size: 100%;
+    font-family: 'Orbitron';
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease-in-out;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+}
+.mcservsel .nav-btns > :last-child{
+    color: white;
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    padding: 12px 32px;
+    font-size: 100%;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    font-family: 'Orbitron';
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+.mcservsel .nav-btns a:hover{
+    transform: scale(1.05);
+}
+.mcservsel .mcservsel-pages{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+}
+.mcservsel .mcservsel-pages .page{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 90%;
+    width: 90%;
+    gap: 50px;
+    transition: 0.15s ease-in-out;
+    transform: scale(0);
+    flex: 0 0 0%;
+}
+.mcservsel .mcservsel-pages .page.active{
+    display: flex;
+    transform: scale(1);
+    flex: 0 0 100%;
+}
+.mcservsel .mcservsel-pages .page span{
+    font-family: 'Orbitron';
+    font-size: 28px;
+    font-weight: 500;
+    color: #FFFFFF;
+}
+.mcservsel .mcservsel-pages .page .options{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 90%;
+    align-items: flex-start;
+    justify-content: flex-start;    
+}
+.mcservsel .mcservsel-pages .page .options a{
+    padding: 10px 20px;
+    font-size: 18px;
+    width: 80%;
+    background-color: hsla(209, 100%, 50%, 0.05);
+    backdrop-filter: blur(4px);
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    font-family: 'Orbitron';
+    cursor: pointer;
+    transition: 0.15s ease-in-out;
+}
+.mcservsel .mcservsel-pages .page .options a:hover{
+    border-color: #2563eb;
+}
+.mcservsel .mcservsel-pages .page .options a.active{
+    border-color: #2563eb;
+}
+.mcservsel .mcservsel-pages #final .options a{
+    padding: 10px 20px;
+    font-size: 18px;
+    width: 80%;
+    background-color: hsla(209, 100%, 50%, 0.05);
+    backdrop-filter: blur(4px);
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    font-family: 'Orbitron';
+    cursor: pointer;
+    transition: 0.15s ease-in-out;
+}
+.mcservsel .mcservsel-pages #final .options a i{
+    color:#2563eb;
+}
+.mcservsel .mcservsel-pages #final .options a:hover{
+    border-color: rgba(255, 255, 255, 0.2);
+}
+.mcservsel .mcservsel-pages #final .options a.active{
+    border-color: rgba(255, 255, 255, 0.2);
+}
+.mcservsel .mcservsel-pages #final .options > :last-child{
+    color: white;
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    font-family: 'Orbitron';
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    border-width: 2px;
+    border-color: transparent;
+}
+.mcservsel .mcservsel-pages #final .options > :last-child:hover{
+    border-color: black;
+}
+.mcservsel .mcservsel-pages #final .options a font{
+    color: grey;
+}
+.mcservsel .mcservsel-pages #final .options a span{
+    font-size: 120%;
 }

@@ -31,7 +31,7 @@ import "../styles/minecraft-phone.css";
 			        <span>Zero Hidden Fees</span>
                 </div>
             </div>
-            <a href="#" class="hbs1-button animate-up">Create Server now</a>
+            <a id="mcservcreatebtn" class="hbs1-button animate-up">Create Server now</a>
         </div>
         <div class="head-banner-segment2 animate-up">
             <img src="/minecraft-s2.png" class="hbs2img">
@@ -48,6 +48,177 @@ import "../styles/minecraft-phone.css";
                     img.style.transform = `translate(${moveX}px, ${moveY}px) rotate(${rotX}deg) scale(${scY})`;
                 });
             </script>
+            <script>
+                const mcservcreatebtn = document.getElementById('mcservcreatebtn');
+                const mcservselnextbtn = document.getElementById('mcservselnextbtn');
+                mcservcreatebtn?.addEventListener('click', () => {
+                    mcservselnextbtn.innerHTML = "Next"
+                    document.querySelector('.mcservsel')?.classList.add('active')
+                    setTimeout(() =>{document.querySelector('.mcservsel-pages #page1')?.classList.add('active')}, 300)
+                    localStorage.setItem('mcservsel-page', '1')
+                    var pg = localStorage.getItem('mcservsel-page')
+                    localStorage.setItem(`mcservsel-pg${pg}-option`, '')
+                    document.querySelectorAll('.mcservsel .mcservsel-pages .page .options a')?.forEach((opt) => {
+                            opt.classList.remove('active');
+                        });
+                });
+                const mcservselclosebtn = document.getElementById('mcservselclosebtn');
+                mcservselclosebtn?.addEventListener('click', () => {
+                    document.querySelectorAll('.mcservsel-pages .page')?.forEach((page) => {
+                        page.classList.remove('active');
+                    });
+                    setTimeout(() =>{document.querySelector('.mcservsel')?.classList.remove('active')}, 150)
+                });
+                document.querySelectorAll('.mcservsel .mcservsel-pages .page .options a')?.forEach((option) => {
+                    option.addEventListener('click', () => {
+                        if(option.parentElement?.parentElement.id != "final"){
+                            document.querySelectorAll('.mcservsel .mcservsel-pages .page .options a')?.forEach((opt) => {
+                                opt.classList.remove('active');
+                                option.classList.add('active');
+                                var pg = localStorage.getItem('mcservsel-page')
+                                localStorage.setItem(`mcservsel-pg${pg}-option`, option.innerText)
+                            });
+                            
+                        }
+                    });
+                });
+                mcservselnextbtn?.addEventListener('click', () => {
+                    var page = parseInt(localStorage.getItem('mcservsel-page') || '1');
+                    var nxtPage = page + 1;
+                    if (localStorage.getItem(`mcservsel-pg${page}-option`) != '' && mcservselnextbtn.innerHTML != "Finish"){
+                        localStorage.setItem(`mcservsel-pg${nxtPage}-option`, '')
+                        document.querySelector(`.mcservsel-pages #page${page}`)?.classList.remove('active');
+                        setTimeout(() => {
+                            document.querySelector(`.mcservsel-pages #page${nxtPage}`)?.classList.add('active');
+                            if (nxtPage == 3){
+                                mcservselnextbtn.innerHTML = "Finish"
+                            }
+                        }, 150);
+                        localStorage.setItem('mcservsel-page', nxtPage.toString());
+                    }
+                    else if (mcservselnextbtn.innerHTML == "Finish" && localStorage.getItem(`mcservsel-pg${page}-option`) != ''){
+                        document.querySelector(`.mcservsel-pages #page${page}`)?.classList.remove('active');
+                        updateFinalPage()
+                        setTimeout(() => {
+                            document.querySelector(`.mcservsel-pages #final`)?.classList.add('active');
+                            mcservselnextbtn.innerHTML = "More plans"
+                            mcservselnextbtn.addEventListener('click', () => {
+                                //open(`/minecraft#${localStorage.getItem(`mcservsel-pg1-option`)}`);
+                            })
+                        }, 150);
+                    }
+                });
+                function updateFinalPage() {
+                    const ram = document.querySelector('#mcservsel-ram')
+                    const cpu = document.querySelector('#mcservsel-cpu')
+                    const storage = document.querySelector('#mcservsel-storage')
+                    const price = document.querySelector('#mcservsel-price')
+                    if (localStorage.getItem('mcservsel-pg2-option') == '1-10'){
+                        if(localStorage.getItem('mcservsel-pg3-option') == '0'){
+                            ram.innerHTML = "2 GB"
+                            cpu.innerHTML = "50%"
+                            storage.innerHTML = "10 GB"
+                            price.innerHTML = "$1.50"
+                        }
+                        else if(localStorage.getItem('mcservsel-pg3-option') == '1-5'){
+                            ram.innerHTML = "3 GB"
+                            cpu.innerHTML = "65%"
+                            storage.innerHTML = "15 GB"
+                            price.innerHTML = "$2.25"
+                        }
+                        else if(localStorage.getItem('mcservsel-pg3-option') == '5-20'){
+                            ram.innerHTML = "4 GB"
+                            cpu.innerHTML = "100%"
+                            storage.innerHTML = "15 GB"
+                            price.innerHTML = "$3.00"
+                        }
+                        else if(localStorage.getItem('mcservsel-pg3-option') == '20+'){
+                            ram.innerHTML = "5 GB"
+                            cpu.innerHTML = "120%"
+                            storage.innerHTML = "20 GB"
+                            price.innerHTML = "$3.75"
+                        }
+                    }
+                    else if (localStorage.getItem('mcservsel-pg2-option') == '10-50'){
+                        if(localStorage.getItem('mcservsel-pg3-option') == '0'){
+                            ram.innerHTML = "4 GB"
+                            cpu.innerHTML = "100%"
+                            storage.innerHTML = "15 GB"
+                            price.innerHTML = "$3.00"
+                        }
+                        else if(localStorage.getItem('mcservsel-pg3-option') == '1-5'){
+                            ram.innerHTML = "5 GB"
+                            cpu.innerHTML = "120%"
+                            storage.innerHTML = "15 GB"
+                            price.innerHTML = "$3.75"
+                        }
+                        else if(localStorage.getItem('mcservsel-pg3-option') == '5-20'){
+                            ram.innerHTML = "6 GB"
+                            cpu.innerHTML = "150%"
+                            storage.innerHTML = "20 GB"
+                            price.innerHTML = "$4.50"
+                        }
+                        else if(localStorage.getItem('mcservsel-pg3-option') == '20+'){
+                            ram.innerHTML = "8 GB"
+                            cpu.innerHTML = "175%"
+                            storage.innerHTML = "20 GB"
+                            price.innerHTML = "$6.00"
+                        }
+                    }
+                    else if (localStorage.getItem('mcservsel-pg2-option') == '50-100'){
+                        if(localStorage.getItem('mcservsel-pg3-option') == '0'){
+                            ram.innerHTML = "6 GB"
+                            cpu.innerHTML = "175%"
+                            storage.innerHTML = "20 GB"
+                            price.innerHTML = "$4.50"
+                        }
+                        else if(localStorage.getItem('mcservsel-pg3-option') == '1-5'){
+                            ram.innerHTML = "8 GB"
+                            cpu.innerHTML = "175%"
+                            storage.innerHTML = "25 GB"
+                            price.innerHTML = "$6.00"
+                        }
+                        else if(localStorage.getItem('mcservsel-pg3-option') == '5-20'){
+                            ram.innerHTML = "12 GB"
+                            cpu.innerHTML = "200%"
+                            storage.innerHTML = "25 GB"
+                            price.innerHTML = "$9.00"
+                        }
+                        else if(localStorage.getItem('mcservsel-pg3-option') == '20+'){
+                            ram.innerHTML = "16 GB"
+                            cpu.innerHTML = "220%"
+                            storage.innerHTML = "30 GB"
+                            price.innerHTML = "$12.00"
+                        }
+                    }
+                    else if (localStorage.getItem('mcservsel-pg2-option') == '100+'){
+                        if(localStorage.getItem('mcservsel-pg3-option') == '0'){
+                            ram.innerHTML = "8 GB"
+                            cpu.innerHTML = "150%"
+                            storage.innerHTML = "20 GB"
+                            price.innerHTML = "$6.00"
+                        }
+                        else if(localStorage.getItem('mcservsel-pg3-option') == '1-5'){
+                            ram.innerHTML = "14 GB"
+                            cpu.innerHTML = "175%"
+                            storage.innerHTML = "20 GB"
+                            price.innerHTML = "$10.50"
+                        }
+                        else if(localStorage.getItem('mcservsel-pg3-option') == '5-20'){
+                            ram.innerHTML = "16 GB"
+                            cpu.innerHTML = "200%"
+                            storage.innerHTML = "30 GB"
+                            price.innerHTML = "$12.00"
+                        }
+                        else if(localStorage.getItem('mcservsel-pg3-option') == '20+'){
+                            ram.innerHTML = "20 GB"
+                            cpu.innerHTML = "225%"
+                            storage.innerHTML = "40 GB"
+                            price.innerHTML = "$15.00"
+                        }
+                    }
+                }
+            </script>
         </div>
     </div>
     <div class="vr"></div>
@@ -55,5 +226,48 @@ import "../styles/minecraft-phone.css";
         <span class="b2-title">Want a <font>Custom</font> order?</span>
         <span class="b2-sub">Join our <font>Discord</font> and create a ticket to get a custom order. We will reply ASAP.</span>
         <a class="b2-btn" href="https://discord.gg/cKAX93RnKK">Join Discord!<img src="/discord-black.png"></a>
+    </div>
+    <div class="mcservsel">
+        <div class="mcservsel-pages">
+            <div id="page1" class="page">
+                <span>Select Location</span>
+                <div class="options">
+                    <a>FINLAND</a>
+                </div>
+            </div>
+            <div id="page2" class="page">
+                <span>How many players in the server?</span>
+                <div class="options">
+                    <a>1-10</a>
+                    <a>10-50</a>
+                    <a>50-100</a>
+                    <a>100+</a>
+                </div>
+            </div>
+            <div id="page3" class="page">
+                <span>How many plugins/mods will be added?</span>
+                <div class="options">
+                    <a>0</a>
+                    <a>1-5</a>
+                    <a>5-20</a>
+                    <a>20+</a>
+                </div>
+            </div>
+            <div id="final" class="page">
+                <span>Best option for you</span>
+                <div class="options">
+                    <a><i class="fi fi-rr-memory"></i> RAM: <span id="mcservsel-ram"></span></a>
+                    <a><i class="fi fi-rr-microchip"></i> CPU: <span id="mcservsel-cpu"></span></a>
+                    <a><i class="fi fi-rr-folder"></i> Storage: <span id="mcservsel-storage"></span></a>
+                    <a><i class="fi fi-rr-usd-circle"></i> Price: <span id="mcservsel-price"></span><font>/month</font></a>
+                    <a>Buy!</a>
+                </div>
+            </div>
+        </div>
+        <div class="vr"></div>
+        <div class="nav-btns">
+            <a id="mcservselclosebtn">Close</a>
+            <a id="mcservselnextbtn">Next</a>
+        </div>
     </div>
 </Layout>

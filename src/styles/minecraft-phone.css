@@ -43,4 +43,72 @@
     .head-banner-segment2 .hbs2img{
         width: 400px;
     }
+    .mcservsel {
+        width: 90%;
+        height: 85%;
+        border-radius: 8px;
+    }
+
+    .mcservsel > :first-child {
+        flex: 0 0 80%;
+    }
+
+    .mcservsel > :last-child {
+        flex: 0 0 20%;
+    }
+
+    .mcservsel .nav-btns {
+        gap: 20%;
+        width: 100%;
+    }
+
+    .mcservsel .nav-btns > :first-child,
+    .mcservsel .nav-btns > :last-child {
+        padding: 10px 22px;
+        font-size: 90%;
+        border-radius: 5px;
+    }
+
+    .mcservsel .mcservsel-pages {
+        width: 100%;
+        height: 100%;
+    }
+
+    .mcservsel .mcservsel-pages .page {
+        width: 95%;
+        height: 95%;
+        gap: 30px;
+    }
+
+    .mcservsel .mcservsel-pages .page span {
+        font-size: 22px;
+    }
+
+    .mcservsel .mcservsel-pages .page .options {
+        gap: 8px;
+        width: 100%;
+    }
+
+    .mcservsel .mcservsel-pages .page .options a {
+        width: 90%;
+        padding: 8px 15px;
+        font-size: 16px;
+        border-radius: 6px;
+    }
+
+    .mcservsel .mcservsel-pages #final .options a {
+        width: 90%;
+        padding: 8px 15px;
+        font-size: 16px;
+    }
+
+    .mcservsel .mcservsel-pages #final .options > :last-child {
+        padding: 8px 15px;
+        font-size: 16px;
+        border-radius: 5px;
+    }
+
+    .mcservsel .mcservsel-pages #final .options a span {
+        font-size: 110%;
+    }
 }
