@@ -13,33 +13,6 @@ import "../styles/base-phone.css"
 		<link rel="stylesheet" href="/uicons-regular-rounded.css">
 	</head>
 	<body>
-		<audio id="bg-music" src="/background-music.mp3" autoplay loop></audio>
-		<script>
-			const bgMusic = document.getElementById("bg-music");
-			window.addEventListener("DOMContentLoaded", () => {
-				bgMusic.currentTime = window.localStorage.getItem("bg-music-time") || 0;
-				if (localStorage.getItem("bg-music-muted") === "true") {
-					bgMusic.volume = 0.0;
-					document.querySelector("#bg-music-toggle span i").className = "fi fi-rr-volume-mute";
-				}
-				else {
-					document.querySelector("#bg-music-toggle span i").className = "fi fi-rr-volume";
-					bgMusic.volume = 0.02;
-				}
-			});
-			window.addEventListener("pagehide", () => {
-				window.localStorage.setItem("bg-music-time", bgMusic.currentTime);
-			});
-			document.querySelector("#bg-music-toggle")?.addEventListener("click", () => {
-				if (localStorage.getItem("bg-music-muted") === "true") {
-					localStorage.setItem("bg-music-muted", "false");
-				}
-				else if (localStorage.getItem("bg-music-muted") === "false" || localStorage.getItem("bg-music-muted") === null) {
-					localStorage.setItem("bg-music-muted", "true");
-				}
-				location.reload();
-			});
-		</script>
 		<script>
 			function storeScroll() {
 				document.documentElement.dataset.scroll = window.scrollY+'';
