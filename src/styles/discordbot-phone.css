@@ -1,0 +1,114 @@
+@media only screen and (max-width: 1000px) {
+    .head-banner{
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+        margin-top: 15vh !important;
+        height: max-content;
+    }
+    .head-banner::before{
+        height: 100% !important;
+        position: relative;
+    }
+    .head-banner::after{
+        height: 100% !important;
+        position: relative;
+    }
+    .head-banner > :first-child {
+        flex: unset !important;
+    }
+    .head-banner > :last-child {
+        flex: unset !important;
+    }
+    .head-banner-segment1{
+        align-items: center !important;
+        justify-content: center !important;
+        height: max-content !important;
+    }
+    .head-banner-segment1 .hbs1t{
+        text-align: center;
+        background-size: 100% 75%;
+    }
+    .hbs1q{
+        left: 0%;
+    }
+    .head-banner-segment1 .hbs1s{
+        text-align: center;
+        padding:0 10%;
+    }
+    .hbs1f{
+        justify-content: center;
+        padding:0 10%;
+    }
+    .head-banner-segment2 .hbs2img{
+        width: 400px;
+    }
+    .dcservsel {
+        width: 90%;
+        height: 85%;
+        border-radius: 8px;
+    }
+
+    .dcservsel > :first-child {
+        flex: 0 0 80%;
+    }
+
+    .dcservsel > :last-child {
+        flex: 0 0 20%;
+    }
+
+    .dcservsel .nav-btns {
+        gap: 20%;
+        width: 100%;
+    }
+
+    .dcservsel .nav-btns > :first-child,
+    .dcservsel .nav-btns > :last-child {
+        padding: 10px 22px;
+        font-size: 90%;
+        border-radius: 5px;
+    }
+
+    .dcservsel .dcservsel-pages {
+        width: 100%;
+        height: 100%;
+    }
+
+    .dcservsel .dcservsel-pages .page {
+        width: 95%;
+        height: 95%;
+        gap: 30px;
+    }
+
+    .dcservsel .dcservsel-pages .page span {
+        font-size: 22px;
+    }
+
+    .dcservsel .dcservsel-pages .page .options {
+        gap: 8px;
+        width: 100%;
+    }
+
+    .dcservsel .dcservsel-pages .page .options a {
+        width: 90%;
+        padding: 8px 15px;
+        font-size: 16px;
+        border-radius: 6px;
+    }
+
+    .dcservsel .dcservsel-pages #final .options a {
+        width: 90%;
+        padding: 8px 15px;
+        font-size: 16px;
+    }
+
+    .dcservsel .dcservsel-pages #final .options > :last-child {
+        padding: 8px 15px;
+        font-size: 16px;
+        border-radius: 5px;
+    }
+
+    .dcservsel .dcservsel-pages #final .options a span {
+        font-size: 110%;
+    }
+}

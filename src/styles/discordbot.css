@@ -1,0 +1,392 @@
+.head-banner{
+    /*height:99.882vh;*/
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    margin: 0 4%;
+    padding: 0% 2%;
+}
+.head-banner *{
+    z-index: 2;
+}
+.head-banner::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(11,11,20, 0.97); /* darken */
+    backdrop-filter: blur(1px);
+    z-index: 1;
+  }
+.head-banner::after {
+    content: "";
+    background-image: url(/minecraft-hero.jpeg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 0;
+  }
+.head-banner > :first-child {
+    flex: 0 0 65%;
+}
+.head-banner > :last-child {
+    flex: 0 0 35%;
+}
+.head-banner-segment1{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+}
+.head-banner-segment1 .hbs1t{
+    font-size: 50px;
+    text-align: left;
+    font-family: 'Lake Font';
+    display: flex;
+    flex-direction: column;
+    color: transparent;
+    margin-bottom: 10px;
+    font-weight: 200;
+    background: linear-gradient(90deg, #3b82f6, #9333ea, #3b82f6);
+    background-size: 100% 75%;
+    background-repeat: no-repeat;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 2px 15px rgba(96, 165, 250, 0.5));
+}
+.hbs1q{
+    font-size: 15px;
+    color: rgb(254, 202, 105);
+    -webkit-text-fill-color: rgb(254, 202, 105);
+    font-family: sans-serif;
+    text-align: center;
+    font-weight: 500;
+    position: relative;
+    left:17%;
+    z-index: 2;
+    border-radius: 99999px;
+    border-color: rgba(250, 175, 96, 0.2);
+    border-width: 1px;
+    border-style: solid;
+    padding: 10px 20px;
+    background-color: rgba(246, 160, 48, 0.1);
+    backdrop-filter: blur(12px);
+    box-shadow: 0px 2px 0px rgba(250, 188, 96, 0.4);
+    /*animation: pushUp 1s ease-in-out forwards;*/
+    filter:drop-shadow(0 2px 10px rgb(255, 255, 255));
+}
+.head-banner-segment1 .hbs1s{
+    font-size: 17px;
+    text-align: left;
+    color: #C3C6CA;
+    margin-bottom: 10px;
+    font-weight: small;
+}
+.hbs1f{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+.hbs1f-item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-direction: row;
+    padding: 2px 5px;
+    background-color: rgba(255, 255, 255, 0.0);
+    border-radius: 12px;
+}
+.hbs1f-item i{
+    background: linear-gradient(90deg, #3b82f6, #2563eb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    background-clip: text;
+    font-size: 30px;
+    font-weight: 500;
+    transform: translateY(12.5%);
+}
+.hbs1f-item span{
+    font-size: 20px;
+    color: #FFFFFF;
+    font-family: 'Orbitron';
+    font-weight: 200;
+}
+.hbs1-button{
+    color: white;
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    padding: 12px 32px;
+    margin-top: 15px;
+    font-size: 18px;
+    left:10px;
+    position: relative;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    font-family: 'Orbitron';
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+.hbs1-button:hover{
+    transform: scale(1.05);
+}
+.head-banner-segment2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.head-banner-segment2 .hbs2img{
+    width: 475px;
+    height: auto;
+    filter: drop-shadow(0 2px 15px rgba(255, 255, 255, 0.5));
+    transition: all 0.1s linear;
+}
+.banner2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 4%;
+    padding: 2%;
+    width:100%;
+}
+.b2-title{
+    font-family: 'Orbitron';
+    font-size: 40px;
+    font-weight: 300;
+    text-align: center;
+}
+.b2-title font{
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+.b2-sub{
+    font-size: 30px;
+    font-weight: 200;
+    text-align: center;
+}
+.b2-sub font{
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+.b2-btn{
+    color: white;
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    padding: 12px 32px;
+    padding-top: 7px;
+    margin-top: 15px;
+    font-size: 18px;
+    left:10px;
+    position: relative;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    font-family: 'Orbitron';
+    transition: all 0.3s ease-in-out;
+}
+.b2-btn:hover{
+    transform: scale(1.05);
+}
+.b2-btn img{
+    width:25px;
+    height:auto;
+    top:4px;
+    position: relative;
+    margin-left: 10px;
+}
+.dcservsel{
+    background-color: rgba(11,11,20, 0.97);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scaleY(0);
+    z-index: 1000;
+    display: flex;
+    height: 75%;
+    width: 50%;
+    border-radius: 10px;
+    transition: 0.3s ease-in-out;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.dcservsel.active{
+    display: flex;
+    transform: translate(-50%, -50%) scaleY(1);
+}
+.dcservsel > :first-child{
+    flex: 0 0 84.9%;
+}
+.dcservsel > :nth-child(2){
+    flex: 0 0 0.1%;
+}
+.dcservsel > :last-child{
+    flex: 0 0 15%;
+}
+.dcservsel .nav-btns{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60%;
+    width: 100%;
+}
+.dcservsel .nav-btns > :first-child{
+    color: white;
+    background-color: hsla(209, 100%, 50%, 0.15);
+    backdrop-filter: blur(4px);
+    padding: 12px 32px;
+    font-size: 100%;
+    font-family: 'Orbitron';
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease-in-out;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+}
+.dcservsel .nav-btns > :last-child{
+    color: white;
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    padding: 12px 32px;
+    font-size: 100%;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    font-family: 'Orbitron';
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+.dcservsel .nav-btns a:hover{
+    transform: scale(1.05);
+}
+.dcservsel .dcservsel-pages{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+}
+.dcservsel .dcservsel-pages .page{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 90%;
+    width: 90%;
+    gap: 50px;
+    transition: 0.15s ease-in-out;
+    transform: scale(0);
+    flex: 0 0 0%;
+}
+.dcservsel .dcservsel-pages .page.active{
+    display: flex;
+    transform: scale(1);
+    flex: 0 0 100%;
+}
+.dcservsel .dcservsel-pages .page span{
+    font-family: 'Orbitron';
+    font-size: 28px;
+    font-weight: 500;
+    color: #FFFFFF;
+}
+.dcservsel .dcservsel-pages .page .options{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 90%;
+    align-items: flex-start;
+    justify-content: flex-start;    
+}
+.dcservsel .dcservsel-pages .page .options a{
+    padding: 10px 20px;
+    font-size: 18px;
+    width: 80%;
+    background-color: hsla(209, 100%, 50%, 0.05);
+    backdrop-filter: blur(4px);
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    font-family: 'Orbitron';
+    cursor: pointer;
+    transition: 0.15s ease-in-out;
+}
+.dcservsel .dcservsel-pages .page .options a:hover{
+    border-color: #2563eb;
+}
+.dcservsel .dcservsel-pages .page .options a.active{
+    border-color: #2563eb;
+}
+.dcservsel .dcservsel-pages #final .options a{
+    padding: 10px 20px;
+    font-size: 18px;
+    width: 80%;
+    background-color: hsla(209, 100%, 50%, 0.05);
+    backdrop-filter: blur(4px);
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    font-family: 'Orbitron';
+    cursor: pointer;
+    transition: 0.15s ease-in-out;
+}
+.dcservsel .dcservsel-pages #final .options a i{
+    color:#2563eb;
+}
+.dcservsel .dcservsel-pages #final .options a:hover{
+    border-color: rgba(255, 255, 255, 0.2);
+}
+.dcservsel .dcservsel-pages #final .options a.active{
+    border-color: rgba(255, 255, 255, 0.2);
+}
+.dcservsel .dcservsel-pages #final .options > :last-child{
+    color: white;
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    font-family: 'Orbitron';
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    border-width: 2px;
+    border-color: transparent;
+}
+.dcservsel .dcservsel-pages #final .options > :last-child:hover{
+    border-color: black;
+}
+.dcservsel .dcservsel-pages #final .options a font{
+    color: grey;
+}
+.dcservsel .dcservsel-pages #final .options a span{
+    font-size: 120%;
+}

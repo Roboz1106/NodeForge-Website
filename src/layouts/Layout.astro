@@ -20,19 +20,6 @@ import "../styles/base-phone.css"
 			document.addEventListener('scroll', storeScroll);
 			storeScroll();
 		</script>
-		<script>
-			var subpath = window.location.href.split('/').pop()
-			subpath = subpath.split('#')[0];
-			subpath = subpath.split('?')[0];
-			if (subpath == "minecraft"){
-				document.getElementById("mc-hma")?.classList.add("hmah");
-			}
-			else if (subpath == "discordbot"){
-				document.getElementById("dc-hma")?.classList.add("hmah");
-			}
-		</script>
-
-
 		<div class="header">
 			<a href="/" class="header-logo">
 				<img src="/Full_Logo.png">
@@ -41,12 +28,17 @@ import "../styles/base-phone.css"
 				<i class="fi fi-rr-menu-burger"></i>
 			</div>
 			<div class="header-menu">
-				<a id="mc-hma" href="/minecraft"><span><i class="fi fi-rr-gamepad"></i> Minecraft</span></a>
+				<div><span><i class="fi fi-rr-gamepad"></i> Games <i id="hmda" class="fi fi-rr-angle-small-down"></i></span>
+					<div class="hmdis">
+						<a href="/minecraft"><img src="/minecraft.png">Minecraft</a>
+						<a><img src="/BeamNG.png">BeamMP</a>
+						<a><img src="/palworld.jpg">Palworld</a>
+					</div>
+				</div>
 				<!--a id="bmp-hma" href="/beammp"><span><i class="fi fi-rr-gamepad"></i> BeamMP</span></a-->
-				<a id="dc-hma" href="/discordbot"><span><i class="fi fi-rr-screen"></i> Discord Bot</span></a>
+				<a href="/discordbot"><span><i class="fi fi-rr-screen"></i> Discord Bot</span></a>
 				<a href="https://billing.nodeforge.in"><button class="header-menu-buttons">Billing</button></a>
 				<a href="https://control.nodeforge.in"><button class="header-menu-buttons">Control</button></a>
-				<a id="bg-music-toggle"><span><i class=""></i></span></a>
 			</div>
 		</div>
 		<div class="content">

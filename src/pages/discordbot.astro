@@ -1,0 +1,275 @@
+---
+import Layout from '../layouts/Layout.astro';
+import "../styles/discordbot.css";
+import "../styles/discordbot-phone.css";
+---
+<Layout>
+    <div class="head-banner">
+        <div class="head-banner-segment1">
+            <span class="hbs1q animate-up">Premium</span>
+            <span class="hbs1t animate-up">DISCORD BOT<font style="color:white;-webkit-text-fill-color: white;">HOSTING</font></span>
+            <span class="hbs1s animate-up">Host your Discord bot effortlessly with NodeForge. Designed for bot developers, our hosting provides low-latency performance and reliable 24/7 uptime, perfect for any type of bot.</span>
+            <div class="hbs1f animate-up">
+                <div class="hbs1f-item">
+                    <i class="fi fi-rr-check-circle"></i>
+			        <span>NodeJS</span>
+                </div>
+                <div class="hbs1f-item">
+                    <i class="fi fi-rr-bolt"></i>
+			        <span>Quick Setup</span>
+                </div>
+                <div class="hbs1f-item">
+                    <i class="fi fi-rr-screen"></i>
+			        <span>Best Control Panel</span>
+                </div>
+                <div class="hbs1f-item">
+                    <i class="fi fi-rr-cloud-upload"></i>
+			        <span>98% Server Uptime</span>
+                </div>
+                <div class="hbs1f-item">
+                    <i class="fi fi-rr-money"></i>
+			        <span>Zero Hidden Fees</span>
+                </div>
+            </div>
+            <a id="dcservcreatebtn" class="hbs1-button animate-up">Host Bot Now</a>
+        </div>
+        <div class="head-banner-segment2 animate-up">
+            <img src="/discord.png" class="hbs2img">
+            <script>
+                const img = document.querySelector('.hbs2img');
+                window.addEventListener('mousemove', (e) => {
+                    const x = e.clientX / window.innerWidth - 0.5;
+                    const y = e.clientY / window.innerHeight - 0.5;
+                    const strength = 15;
+                    const moveX = x * strength;
+                    const moveY = y * strength;
+                    const rotX = x * 1;
+                    const scY = ((-y+0.5)*0.02)+1;
+                    img.style.transform = `translate(${moveX}px, ${moveY}px) rotate(${rotX}deg) scale(${scY})`;
+                });
+            </script>
+            <script>
+                const dcservcreatebtn = document.getElementById('dcservcreatebtn');
+                const dcservselnextbtn = document.getElementById('dcservselnextbtn');
+                dcservcreatebtn?.addEventListener('click', () => {
+                    dcservselnextbtn.innerHTML = "Next"
+                    document.querySelector('.dcservsel')?.classList.add('active')
+                    setTimeout(() =>{document.querySelector('.dcservsel-pages #page1')?.classList.add('active')}, 300)
+                    localStorage.setItem('dcservsel-page', '1')
+                    var pg = localStorage.getItem('dcservsel-page')
+                    localStorage.setItem(`dcservsel-pg${pg}-option`, '')
+                    document.querySelectorAll('.dcservsel .dcservsel-pages .page .options a')?.forEach((opt) => {
+                            opt.classList.remove('active');
+                        });
+                });
+                const dcservselclosebtn = document.getElementById('dcservselclosebtn');
+                dcservselclosebtn?.addEventListener('click', () => {
+                    document.querySelectorAll('.dcservsel-pages .page')?.forEach((page) => {
+                        page.classList.remove('active');
+                    });
+                    setTimeout(() =>{document.querySelector('.dcservsel')?.classList.remove('active')}, 150)
+                });
+                document.querySelectorAll('.dcservsel .dcservsel-pages .page .options a')?.forEach((option) => {
+                    option.addEventListener('click', () => {
+                        if(option.parentElement?.parentElement.id != "final"){
+                            document.querySelectorAll('.dcservsel .dcservsel-pages .page .options a')?.forEach((opt) => {
+                                opt.classList.remove('active');
+                                option.classList.add('active');
+                                var pg = localStorage.getItem('dcservsel-page')
+                                localStorage.setItem(`dcservsel-pg${pg}-option`, option.innerText)
+                            });
+                            
+                        }
+                    });
+                });
+                dcservselnextbtn?.addEventListener('click', () => {
+                    var page = parseInt(localStorage.getItem('dcservsel-page') || '1');
+                    var nxtPage = page + 1;
+                    if (localStorage.getItem(`dcservsel-pg${page}-option`) != '' && dcservselnextbtn.innerHTML != "Finish"){
+                        localStorage.setItem(`dcservsel-pg${nxtPage}-option`, '')
+                        document.querySelector(`.dcservsel-pages #page${page}`)?.classList.remove('active');
+                        setTimeout(() => {
+                            document.querySelector(`.dcservsel-pages #page${nxtPage}`)?.classList.add('active');
+                            if (nxtPage == 2){
+                                dcservselnextbtn.innerHTML = "Finish"
+                            }
+                        }, 150);
+                        localStorage.setItem('dcservsel-page', nxtPage.toString());
+                    }
+                    else if (dcservselnextbtn.innerHTML == "Finish" && localStorage.getItem(`dcservsel-pg${page}-option`) != ''){
+                        document.querySelector(`.dcservsel-pages #page${page}`)?.classList.remove('active');
+                        updateFinalPage()
+                        setTimeout(() => {
+                            document.querySelector(`.dcservsel-pages #final`)?.classList.add('active');
+                            dcservselnextbtn.innerHTML = "More plans"
+                            dcservselnextbtn.addEventListener('click', () => {
+                                //open(`/minecraft#${localStorage.getItem(`dcservsel-pg1-option`)}`);
+                            })
+                        }, 150);
+                    }
+                });
+                function updateFinalPage() {
+                    const ram = document.querySelector('#dcservsel-ram')
+                    const cpu = document.querySelector('#dcservsel-cpu')
+                    const storage = document.querySelector('#dcservsel-storage')
+                    const price = document.querySelector('#dcservsel-price')
+                    if (localStorage.getItem('dcservsel-pg1-option') == '1-10') {
+                        // 1–10 servers
+                        if (localStorage.getItem('dcservsel-pg2-option') == '0') {
+                            ram.innerHTML = "1 GB"
+                            cpu.innerHTML = "50%"
+                            storage.innerHTML = "2 GB"
+                            price.innerHTML = "$0.60"
+                        }
+                        else if (localStorage.getItem('dcservsel-pg2-option') == '1-10') {
+                            ram.innerHTML = "2 GB"
+                            cpu.innerHTML = "75%"
+                            storage.innerHTML = "4 GB"
+                            price.innerHTML = "$1.20"
+                        }
+                        else if (localStorage.getItem('dcservsel-pg2-option') == '10-20') {
+                            ram.innerHTML = "3 GB"
+                            cpu.innerHTML = "100%"
+                            storage.innerHTML = "6 GB"
+                            price.innerHTML = "$1.80"
+                        }
+                        else if (localStorage.getItem('dcservsel-pg2-option') == '20+') {
+                            ram.innerHTML = "4 GB"
+                            cpu.innerHTML = "125%"
+                            storage.innerHTML = "8 GB"
+                            price.innerHTML = "$2.40"
+                        }
+                    }
+
+                    else if (localStorage.getItem('dcservsel-pg1-option') == '10-50') {
+                        // 10–50 servers
+                        if (localStorage.getItem('dcservsel-pg2-option') == '0') {
+                            ram.innerHTML = "2 GB"
+                            cpu.innerHTML = "75%"
+                            storage.innerHTML = "4 GB"
+                            price.innerHTML = "$1.20"
+                        }
+                        else if (localStorage.getItem('dcservsel-pg2-option') == '1-5') {
+                            ram.innerHTML = "4 GB"
+                            cpu.innerHTML = "125%"
+                            storage.innerHTML = "8 GB"
+                            price.innerHTML = "$2.40"
+                        }
+                        else if (localStorage.getItem('dcservsel-pg2-option') == '5-20') {
+                            ram.innerHTML = "6 GB"
+                            cpu.innerHTML = "150%"
+                            storage.innerHTML = "12 GB"
+                            price.innerHTML = "$3.60"
+                        }
+                        else if (localStorage.getItem('dcservsel-pg2-option') == '20+') {
+                            ram.innerHTML = "8 GB"
+                            cpu.innerHTML = "175%"
+                            storage.innerHTML = "16 GB"
+                            price.innerHTML = "$4.80"
+                        }
+                    }
+
+                    else if (localStorage.getItem('dcservsel-pg1-option') == '50-100') {
+                        // 50–100 servers
+                        if (localStorage.getItem('dcservsel-pg2-option') == '0') {
+                            ram.innerHTML = "3 GB"
+                            cpu.innerHTML = "100%"
+                            storage.innerHTML = "6 GB"
+                            price.innerHTML = "$1.80"
+                        }
+                        else if (localStorage.getItem('dcservsel-pg2-option') == '1-5') {
+                            ram.innerHTML = "5 GB"
+                            cpu.innerHTML = "150%"
+                            storage.innerHTML = "10 GB"
+                            price.innerHTML = "$3.00"
+                        }
+                        else if (localStorage.getItem('dcservsel-pg2-option') == '5-20') {
+                            ram.innerHTML = "7 GB"
+                            cpu.innerHTML = "175%"
+                            storage.innerHTML = "14 GB"
+                            price.innerHTML = "$4.20"
+                        }
+                        else if (localStorage.getItem('dcservsel-pg2-option') == '20+') {
+                            ram.innerHTML = "9 GB"
+                            cpu.innerHTML = "200%"
+                            storage.innerHTML = "18 GB"
+                            price.innerHTML = "$5.40"
+                        }
+                    }
+
+                    else if (localStorage.getItem('dcservsel-pg1-option') == '100+') {
+                        // 100+ servers
+                        if (localStorage.getItem('dcservsel-pg2-option') == '0') {
+                            ram.innerHTML = "4 GB"
+                            cpu.innerHTML = "125%"
+                            storage.innerHTML = "8 GB"
+                            price.innerHTML = "$2.40"
+                        }
+                        else if (localStorage.getItem('dcservsel-pg2-option') == '1-5') {
+                            ram.innerHTML = "6 GB"
+                            cpu.innerHTML = "175%"
+                            storage.innerHTML = "12 GB"
+                            price.innerHTML = "$3.60"
+                        }
+                        else if (localStorage.getItem('dcservsel-pg2-option') == '5-20') {
+                            ram.innerHTML = "8 GB"
+                            cpu.innerHTML = "200%"
+                            storage.innerHTML = "16 GB"
+                            price.innerHTML = "$4.80"
+                        }
+                        else if (localStorage.getItem('dcservsel-pg2-option') == '20+') {
+                            ram.innerHTML = "10 GB"
+                            cpu.innerHTML = "225%"
+                            storage.innerHTML = "20 GB"
+                            price.innerHTML = "$6.00"
+                        }
+                    }
+
+                }
+            </script>
+        </div>
+    </div>
+    <div class="vr"></div>
+    <div class="banner2">
+        <span class="b2-title">Want a <font>Custom</font> order?</span>
+        <span class="b2-sub">Join our <font>Discord</font> and create a ticket to get a custom order. We will reply ASAP.</span>
+        <a class="b2-btn" href="https://discord.gg/cKAX93RnKK">Join Discord!<img src="/discord-black.png"></a>
+    </div>
+    <div class="dcservsel">
+        <div class="dcservsel-pages">
+            <div id="page1" class="page">
+                <span>How many Discord servers will the bot join?</span>
+                <div class="options">
+                    <a>1-10</a>
+                    <a>10-50</a>
+                    <a>50-100</a>
+                    <a>100+</a>
+                </div>
+            </div>
+            <div id="page2" class="page">
+                <span>How many commands will be added?</span>
+                <div class="options">
+                    <a>0</a>
+                    <a>1-10</a>
+                    <a>10-20</a>
+                    <a>20+</a>
+                </div>
+            </div>
+            <div id="final" class="page">
+                <span>Best option for you</span>
+                <div class="options">
+                    <a><i class="fi fi-rr-memory"></i> RAM: <span id="dcservsel-ram"></span></a>
+                    <a><i class="fi fi-rr-microchip"></i> CPU: <span id="dcservsel-cpu"></span></a>
+                    <a><i class="fi fi-rr-folder"></i> Storage: <span id="dcservsel-storage"></span></a>
+                    <a><i class="fi fi-rr-usd-circle"></i> Price: <span id="dcservsel-price"></span><font>/month</font></a>
+                    <a>Buy!</a>
+                </div>
+            </div>
+        </div>
+        <div class="vr"></div>
+        <div class="nav-btns">
+            <a id="dcservselclosebtn">Close</a>
+            <a id="dcservselnextbtn">Next</a>
+        </div>
+    </div>
+</Layout>
