@@ -13,7 +13,7 @@
     border: 0px solid #ccc; /* padding effect */
   }
   body, html {
-    overflow-x: hidden; /* ok */
+    overflow-x: auto; /* ok */
     overflow-y: auto;   /* or scroll, also ok */
     position: relative;
   }
