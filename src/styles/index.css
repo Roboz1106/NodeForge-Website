@@ -202,8 +202,7 @@
     border-radius: 8px;
     border-width: 2px;
     border-style: solid;
-    background-color: rgba(37, 99, 235, 0.08);
-    background-image: url(/background.webp);
+    background-color: rgba(255,255,255, 0.05);
     width:75%;
     height: 300px;
     gap:10px;

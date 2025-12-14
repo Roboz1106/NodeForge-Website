@@ -249,8 +249,8 @@
 .mcservsel .nav-btns{
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 60%;
+    justify-content: space-evenly;
+    gap: 40%;
     width: 100%;
 }
 .mcservsel .nav-btns > :first-child{

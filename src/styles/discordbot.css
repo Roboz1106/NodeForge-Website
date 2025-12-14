@@ -24,7 +24,7 @@
   }
 .head-banner::after {
     content: "";
-    background-image: url(/minecraft-hero.jpeg);
+    background-image: url(/discord-banner.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -249,8 +249,8 @@
 .dcservsel .nav-btns{
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 60%;
+    justify-content: space-evenly;
+    gap: 40%;
     width: 100%;
 }
 .dcservsel .nav-btns > :first-child{
