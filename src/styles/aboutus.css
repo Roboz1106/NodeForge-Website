@@ -139,13 +139,53 @@
     width: 20%;
     height: 75%;
     transition: all 0.3s ease-in-out;
+    position: relative;
+    overflow: visible;
 }
+
 .b2-card *{
     z-index: 10;
     transition: all 0.3s ease-in-out;
 }
+
 .b2-card:hover{
     border-color: #2563eb;
+}
+@keyframes b2cr {
+    0%{
+        top: 0;
+        left: 50%;
+    }
+    25%{
+        top: 0;
+        left: 100%;
+    }
+    50%{
+        top: 100%;
+        left: 100%;
+    }
+    75%{
+        top: 100%;
+        left: 0%;
+    }
+    100%{
+        top: 0%;
+        left: 0%;
+    }
+}
+.b2-card::after{
+    content: "";
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    background-color: #2563eb;
+    border-radius: 9999px;
+    z-index: 20;
+    transition: all 0.3s linear;
+    animation: b2cr 2s infinite linear;
 }
 .b2c-icon {
   border-radius: 8px;
