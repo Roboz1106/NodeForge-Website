@@ -311,3 +311,108 @@
 .banner2-menu-item > .b2mia:hover{
     transform: scale(1.05);
 }
+.banner3{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+.banner3-quote1{
+    font-size: 15px;
+    color: rgb(254, 202, 105);
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 10px;
+    z-index: 2;
+    border-radius: 99999px;
+    border-color: rgba(250, 175, 96, 0.2);
+    border-width: 1px;
+    border-style: solid;
+    padding: 10px 20px;
+    background-color: rgba(246, 160, 48, 0.1);
+    backdrop-filter: blur(12px);
+    box-shadow: 0px 2px 0px rgba(250, 188, 96, 0.4);
+    /*animation: pushUp 1s ease-in-out forwards;*/
+    filter:drop-shadow(0 2px 10px rgb(255, 255, 255));
+}
+.banner3-title1{
+    font-size: 50px;
+    font-family: 'Orbitron';
+    /*animation: pushUp 1s ease-in-out forwards;*/
+}
+.banner3-subtitle1{
+    font-size: 20px;
+    color:#bfbfbf;
+    /*animation: pushUp 1s ease-in-out forwards;*/
+}
+.banner3-seg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    /*animation: pushUp 1s ease-in-out forwards;*/
+    flex-direction: row;
+    padding: 20px 0px;
+}
+.banner3-seg > :first-child{
+    flex: 0 0 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.banner3-seg > :last-child{
+    flex: 0 0 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+.banner3-seg1-bar{
+    width: 100%;
+    height: 8px;
+    background-color: rgba(255,255,255,0.1);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 8px;
+    z-index: 5;
+}
+@keyframes b3s1b {
+    0% { width: 0%; }
+    100% { width: 100%; }
+}
+.banner3-seg1-bar::after{
+    content: "";
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(90deg, #3b82f6, #2563eb);
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+}
+.banner3-seg1-bar.active::after{
+  animation: b3s1b 5s linear infinite;
+}
+.banner3-seg2 img{
+    width: 85%;
+    height: auto;
+    padding: 1%;
+    background-color: rgba(255,255,255, 0.05);
+    border-radius: 8px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(255,255,255,0.1);
+    z-index: 20;
+}
+.banner3-seg1-title{
+    color: transparent;
+    background: linear-gradient(90deg, #3b82f6, #9333ea, #3b82f6);
+    font-family: "Lake Font";
+    font-size: 50px;
+    z-index: 2;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

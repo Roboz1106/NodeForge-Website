@@ -141,4 +141,24 @@
   height: auto;
   pointer-events: none; /* won’t block clicks */
 }
+.banner3{
+    width: 90%;
+}
+.banner3-title1{
+    font-size: 190%;
+}
+.banner3-subtitle{
+    font-size: 100%;
+}
+.banner3-seg{
+    flex-direction: column;
+    gap:20px;
+}
+.banner3-seg > :first-child{
+    flex: unset;
+    width: 100%;
+}
+.banner3-seg1-title{
+    font-size: 190%;
+}
 }

@@ -99,4 +99,53 @@ import "../styles/index-phone.css";
 		</div>
 	</div>
 </div>
+<div class="vr"></div>
+<div class="banner3">
+	<span class="banner3-quote1 animate-up" id="services">Easy to use</span>
+	<span class="banner3-title1 animate-up">See our panel</span>
+	<span class="banner3-subtitle1 animate-up">Explore the standout capabilities that make our platform the ideal solution for what you need.</span>
+	<div class="banner3-seg">
+		<div class="banner3-seg1">
+			<span class="banner3-seg1-title"></span>
+			<div class="banner3-seg1-bar"></div>
+		</div>
+		<div class="banner3-seg2">
+			<img id="banner3-seg2-img">
+		</div>
+	</div>
+	<script>
+			window.addEventListener('DOMContentLoaded', () => {
+			const panels = [
+				{ title: "DASHBOARD", img: "/panel1.png" },
+				{ title: "CONSOLE", img: "/panel2.png" },
+				{ title: "FILE MANAGER", img: "/panel3.png" }
+			];
+
+			let index = 0;
+
+			const bar = document.querySelector('.banner3-seg1-bar');
+			const img = document.querySelector('#banner3-seg2-img');
+			const title = document.querySelector('.banner3-seg1-title');
+
+			// 🔹 set FIRST state immediately
+			if (img) img.src = panels[0].img;
+			if (title) title.innerHTML = panels[0].title;
+			bar?.classList.add('active');
+
+			// 🔁 cycle every 5 seconds
+			setInterval(() => {
+				index = (index + 1) % panels.length;
+
+				if (img) img.src = panels[index].img;
+				if (title) title.innerHTML = panels[index].title;
+
+				// restart animation cleanly
+				bar?.classList.remove('active');
+				void bar?.offsetWidth; // force reflow
+				bar?.classList.add('active');
+
+			}, 5000);
+			});
+		</script>
+</div>
 </Layout>
