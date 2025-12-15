@@ -416,3 +416,211 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+.banner4{
+    width: 95%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 3%;
+    padding: 25px;
+    height: 75vh;
+}
+.b4t{
+    font-size: 55px;
+    text-align: center;
+    font-family: 'Orbitron';
+    display: flex;
+    margin-bottom: 10px;
+    font-weight: 200;
+}
+.b4s{
+    font-size: 20px;
+    text-align: center;
+    color: #dbdbdb;
+    font-weight: 100;
+}
+.b4-cards{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5%;
+    flex-direction: row;
+    width: 80%;
+    height: 70%;
+    padding: 10px;
+}
+.b4-card{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: left;
+    gap: 10%;
+    background-color: rgba(255,255,255, 0.05);
+    padding: 20px 20px;
+    border-radius: 8px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0.2);
+    width: 20%;
+    height: 75%;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    overflow: visible;
+}
+
+.b4-card *{
+    z-index: 10;
+    transition: all 0.3s ease-in-out;
+}
+
+.b4-card:hover{
+    border-color: #2563eb;
+}
+.b4c-icon {
+  border-radius: 8px;
+  pointer-events: none; /* won’t block clicks */
+  z-index: 15;
+  font-size: 300%;
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  padding: 10px;
+  padding-bottom: 1px;
+}
+.b4c-title{
+    font-size: 24px;
+    font-weight: 500;
+    font-family: 'Orbitron';
+    color: white;
+    padding: 5px;
+    padding-left: 0;
+}
+.b4c-subtitle{
+    font-size: 16px;
+    font-weight: 100;
+    color: #dbdbdb;
+    padding-left: 0;
+}
+.banner5{
+    width: 95%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 3%;
+    padding: 25px;
+}
+.b5t{
+    font-size: 55px;
+    text-align: center;
+    font-family: 'Orbitron';
+    display: flex;
+    margin-bottom: 10px;
+    font-weight: 200;
+}
+.b5s{
+    font-size: 20px;
+    text-align: center;
+    color: #dbdbdb;
+    font-weight: 100;
+}
+.b5-seg{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 25px;
+    padding-right: 0;
+}
+.b5-seg1{
+    flex: 0 0 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 25px;
+    flex-direction: column;
+    gap:10px;
+}
+.b5-seg1 div{
+    font-size: 25px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    font-family: 'Orbitron';
+    gap: 5px;
+    padding: 10px;
+    background-color: rgba(255,255,255, 0.05);
+    border-radius: 8px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease-in-out;
+}
+.b5-seg1 div img{
+    width: 40px;
+    border-radius: 4px;
+}
+.b5-seg2{
+    flex: 0 0 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 5px;
+    flex-direction: column;
+    position: relative;
+}
+.b5-seg2 img{
+    width: 80%;
+    border-radius: 8px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0.2);
+    filter: invert(1) brightness(0.25);
+}
+.b5-seg2 div{
+    width: 10px;
+    height: 10px;
+    border-radius: 9999px;
+    background-color: #2563eb;
+    position: relative;
+    overflow: visible;
+}
+@keyframes b5s2d {
+    0% {width: 25px; height: 25px; }
+    50% { width: 30px; height: 30px; }
+    100% { width: 25px; height: 25px; }
+}
+.b5-seg2 div::after{
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    border-radius: 9999px;
+    background-color: rgba(37,99,235,0.5);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: b5s2d 1s linear infinite;
+    transition: all 0.1s ease-in-out;
+}
+.b5-seg2 div#b5seg2finland{
+    position: absolute;
+    top: 10.5%;
+    left: 49.5%;
+}
+.b5-seg2 div#b5seg2india{
+    position: absolute;
+    top: 40.5%;
+    left: 62.5%;
+}
+.b5-seg:has(#b5seg2finland:hover) #b5seg1finland{
+    transform: scale(1.05);
+}
+.b5-seg:has(#b5seg2india:hover) #b5seg1india{
+    transform: scale(1.05);
+}

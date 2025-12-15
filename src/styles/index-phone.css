@@ -141,24 +141,85 @@
   height: auto;
   pointer-events: none; /* won’t block clicks */
 }
-.banner3{
-    width: 90%;
-}
-.banner3-title1{
-    font-size: 190%;
-}
-.banner3-subtitle{
-    font-size: 100%;
-}
-.banner3-seg{
+.banner3 {
+    width: 100%;
+    padding: 0;
+  }
+
+  .banner3-seg {
     flex-direction: column;
-    gap:20px;
-}
-.banner3-seg > :first-child{
+    gap: 20px;
+  }
+
+  .banner3-seg > :first-child,
+  .banner3-seg > :last-child {
     flex: unset;
     width: 100%;
-}
-.banner3-seg1-title{
-    font-size: 190%;
-}
+  }
+
+  .banner3-seg2 img {
+    width: 95%;
+  }
+
+  /* ---------- Banner 4 ---------- */
+  .banner4 {
+    height: auto;
+  }
+
+  .b4-cards {
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 20px;
+  }
+
+  .b4-card {
+    width: 90%;
+    height: auto;
+  }
+
+  /* ---------- Banner 5 ---------- */
+  .b5-seg {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .b5-seg1 {
+    flex: unset;
+    width: 100%;
+    padding: 10px;
+  }
+
+  .b5-seg2 {
+    flex: unset;
+    width: 100%;
+    padding: 10px;
+  }
+
+  .b5-seg2 img {
+    width: 95%;
+  }
+
+  /* dot size slightly smaller on mobile */
+  .b5-seg2 div {
+    width: 8px;
+    height: 8px;
+  }
+
+  .b5-seg2 div::after {
+    width: 20px;
+    height: 20px;
+  }
+
+  /* reposition dots for mobile map */
+  .b5-seg2 div#b5seg2finland {
+    top: 12%;
+    left: 48%;
+  }
+
+  .b5-seg2 div#b5seg2india {
+    top: 43%;
+    left: 61%;
+  }
+
 }
