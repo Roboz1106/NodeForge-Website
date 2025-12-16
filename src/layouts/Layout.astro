@@ -115,12 +115,12 @@ import "../styles/base-phone.css"
   });
 
   elements.forEach((el, index) => {
-    const delay = index * 100; // 100ms delay between each element
+    const delay = index * 75; // 100ms delay between each element
     el.style.setProperty('--delay', `${delay}ms`);
     observer.observe(el);
 
     const rect = el.getBoundingClientRect();
-    if (rect.top < window.innerHeight && rect.bottom > 0) {
+    if (rect.top < window.outerHeight && rect.bottom > 0) {
       setTimeout(() => {
         el.classList.add('visible');
       }, 10);
