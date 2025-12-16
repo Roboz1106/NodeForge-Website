@@ -1,0 +1,106 @@
+.head-banner{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 95%;
+    height: 100vh;
+    flex-direction: column;
+    gap: 3%;
+}
+.head-banner::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(11,11,20, 0.85); /* darken */
+    backdrop-filter: blur(1px);
+    z-index: 1;
+  }
+.head-banner::after {
+    content: "";
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 0;
+  }
+.head-banner *{
+    z-index: 3;
+}
+.hbt{
+    font-size: 55px;
+    text-align: left;
+    font-family: 'Lake Font';
+    display: flex;
+    color: transparent;
+    margin-bottom: 10px;
+    font-weight: 200;
+    background: linear-gradient(90deg, #3b82f6, #9333ea, #3b82f6);
+    background-size: 67% 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 2px 15px rgba(96, 165, 250, 0.5));
+    gap:20px;
+}
+.hbt font{
+    color:white;
+    -webkit-background-clip: unset !important;
+    -webkit-text-fill-color: white !important;
+    background-clip: unset !important;
+}
+.hbs{
+    font-size: 18px;
+    text-align: center;
+    color: #ffffff;
+    font-weight: 100;
+    max-width: 50%;
+}
+.hb-users{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    flex-direction: column;
+    padding: 10px;
+}
+.hb-user{
+    width: 40%;
+    height: auto;
+    background-color: rgba(255,255,255,0.1);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 10px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+.hb-user:hover{
+    border: 2px solid #2563eb;
+    transform: scale(1.05);
+}
+.hb-user img{
+    width: 20%;
+    height: auto;
+    border-radius: 16px;
+}
+.hb-user span{
+    font-size: 27px;
+    color: #ffffff;
+    font-weight: 500;
+    font-family: 'Orbitron';
+}
+.hb-user font{
+    font-size: 35px;
+    color: #ff9700;
+    font-weight: 500;
+}

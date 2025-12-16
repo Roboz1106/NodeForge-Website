@@ -1,0 +1,40 @@
+---
+import Layout from '../layouts/Layout.astro';
+import "../styles/staff.css";
+import "../styles/staff-phone.css";
+---
+<Layout>
+    <div class="head-banner">
+        <span class="hbt animate-up">NODEFORGE<font>STAFF</font></span>
+        <span class="hbs animate-up">Know the staff/team members of NodeForge</span>
+        <div class="hb-users">
+        </div>
+        <script>
+            async function fetchRole(){
+                try {
+                    const res = await fetch('http://fin1.nodeforge.in:10001');
+                    const data = await res.json();
+                    const hbUsers = document.querySelector('.hb-users');
+                    for(const role of data){
+                        var hbUser = document.createElement('div')
+                        hbUser.classList.add('hb-user');
+                        var hbUserImg = document.createElement('img')
+                        hbUserImg.src = role.members[0].avatar;
+                        var hbUserSpan = document.createElement('span')
+                        hbUserSpan.innerText = role.name + " - ";
+                        var hbUserFont = document.createElement('font')
+                        hbUserFont.innerText = role.members[0].name;
+                        hbUserFont.style = "color: " + role.color + ";";
+                        hbUser.appendChild(hbUserImg);
+                        hbUser.appendChild(hbUserSpan);
+                        hbUser.appendChild(hbUserFont);
+                        hbUsers.appendChild(hbUser);
+                    }
+                } catch (err) {
+                    console.error(err);
+                }
+            }
+            fetchRole();
+        </script>
+    </div>
+</Layout>

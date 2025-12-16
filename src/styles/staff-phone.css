@@ -1,0 +1,91 @@
+@media only screen and (max-width: 1000px) {
+
+  .head-banner{
+    width: 100%;
+    height: 100vh;
+    gap: 4%;
+    padding: 20px;
+  }
+
+  .hbt{
+    font-size: 38px;
+    text-align: center;
+  }
+
+  .hbs{
+    font-size: 16px;
+    max-width: 90%;
+  }
+
+  .hbq{
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  .hb-button{
+    font-size: 16px;
+    padding: 10px 26px;
+    margin-top: 10px;
+  }
+
+  .banner2{
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .b2t{
+    font-size: 38px;
+  }
+
+  .b2s{
+    font-size: 18px;
+  }
+
+  .b2-cards{
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 20px;
+  }
+
+  .b2-card{
+    width: 80%;
+    height: auto;
+    gap: 15px;
+  }
+
+  .b2c-icon{
+    font-size: 220%;
+    padding: 8px;
+  }
+
+  .b2c-title{
+    font-size: 22px;
+  }
+
+  .b2c-subtitle{
+    font-size: 15px;
+  }
+
+  .banner3{
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    gap: 10px;
+  }
+
+  .b3t{
+    font-size: 34px;
+  }
+
+  .b3s{
+    font-size: 18px;
+  }
+
+  .b3ss{
+    font-size: 15px;
+  }
+
+}
