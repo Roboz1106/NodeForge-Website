@@ -16,19 +16,21 @@ import "../styles/staff-phone.css";
                     const data = await res.json();
                     const hbUsers = document.querySelector('.hb-users');
                     for(const role of data){
-                        var hbUser = document.createElement('div')
-                        hbUser.classList.add('hb-user');
-                        var hbUserImg = document.createElement('img')
-                        hbUserImg.src = role.members[0].avatar;
-                        var hbUserSpan = document.createElement('span')
-                        hbUserSpan.innerText = role.name + " - ";
-                        var hbUserFont = document.createElement('font')
-                        hbUserFont.innerText = role.members[0].name;
-                        hbUserFont.style = "color: " + role.color + ";";
-                        hbUser.appendChild(hbUserImg);
-                        hbUser.appendChild(hbUserSpan);
-                        hbUser.appendChild(hbUserFont);
-                        hbUsers.appendChild(hbUser);
+                        for (var x of role.members){
+                            var hbUser = document.createElement('div')
+                            hbUser.classList.add('hb-user');
+                            var hbUserImg = document.createElement('img')
+                            hbUserImg.src = x.avatar;
+                            var hbUserSpan = document.createElement('span')
+                            hbUserSpan.innerText = role.name + " - ";
+                            var hbUserFont = document.createElement('font')
+                            hbUserFont.innerText = x.name;
+                            hbUserFont.style = "color: " + role.color + ";";
+                            hbUser.appendChild(hbUserImg);
+                            hbUser.appendChild(hbUserSpan);
+                            hbUser.appendChild(hbUserFont);
+                            hbUsers.appendChild(hbUser);
+                        }
                     }
                 } catch (err) {
                     console.error(err);
