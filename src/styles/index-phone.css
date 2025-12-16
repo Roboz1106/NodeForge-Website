@@ -189,7 +189,9 @@
     width: 100%;
     padding: 10px;
   }
-
+  .b5-seg1 div{
+    width: 90%;
+  }
   .b5-seg2 {
     flex: unset;
     width: 100%;
@@ -204,6 +206,8 @@
   .b5-seg2 div {
     width: 8px;
     height: 8px;
+    font-size: 8px;
+    padding: 3px;
   }
 
   .b5-seg2 div::after {
@@ -213,13 +217,13 @@
 
   /* reposition dots for mobile map */
   .b5-seg2 div#b5seg2finland {
-    top: 12%;
+    top: 11%;
     left: 48%;
   }
 
   .b5-seg2 div#b5seg2india {
-    top: 43%;
-    left: 61%;
+    top: 38%;
+    left: 63%;
   }
 
 }
