@@ -583,44 +583,40 @@
     filter: invert(1) brightness(0.25);
 }
 .b5-seg2 div{
-    width: 10px;
-    height: 10px;
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
     border-radius: 9999px;
-    background-color: rgb(255,100,50);
+    background-color: rgba(37,99,235,0.5);
+    color: rgb(37,99,235);
     position: relative;
     overflow: visible;
+    display: flex;
+    justify-content: center;
+    align-items: unset;
+    text-align: center;
+    cursor: pointer;
+    padding: 8px;
+    transition: all 0.3s ease-in-out;
 }
-@keyframes b5s2d {
-    0% {width: 25px; height: 25px; }
-    50% { width: 30px; height: 30px; }
-    100% { width: 25px; height: 25px; }
-}
-.b5-seg2 div::after{
-    content: "";
-    position: absolute;
-    width: 25px;
-    height: 25px;
-    border-radius: 9999px;
-    background-color: rgba(255,100,50,0.5);
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    animation: b5s2d 1s linear infinite;
-    transition: all 0.1s ease-in-out;
+.b5-seg2 div:hover{
+    transform: scale(1.1);
 }
 .b5-seg2 div#b5seg2finland{
     position: absolute;
-    top: 10.5%;
-    left: 49.5%;
+    top: 8%;
+    left: 48%;
 }
 .b5-seg2 div#b5seg2india{
     position: absolute;
-    top: 40.5%;
-    left: 62.5%;
+    top: 38%;
+    left: 61.5%;
 }
 .b5-seg:has(#b5seg2finland:hover) #b5seg1finland{
     transform: scale(1.05);
+    border-color: #2563eb;
 }
 .b5-seg:has(#b5seg2india:hover) #b5seg1india{
     transform: scale(1.05);
+    border-color: #2563eb;
 }
